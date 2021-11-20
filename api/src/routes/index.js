@@ -3,7 +3,8 @@ const { Router } = require('express');
 // Ejemplo: const authRouter = require('./auth.js');
 
 
-const router = Router();
+const router = Router(); 
+//holaaaaaaaaaaaaaaaaaa
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
