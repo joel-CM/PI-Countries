@@ -13,20 +13,20 @@ module.exports = (sequelize) => {
       },
       nombre: {
         type: DataTypes.STRING,
-        // allowNull: false,
+        allowNull: false,
       },
       imagen: {
         type: DataTypes.STRING,
-        // isUrl: true,
-        // allowNull: false,
+        isUrl: true,
+        allowNull: false,
       },
       continente: {
         type: DataTypes.STRING,
-        // allowNull: false,
+        allowNull: false,
       },
       capital: {
         type: DataTypes.STRING,
-        // allowNull: false,
+        allowNull: false,
       },
       subregion: {
         type: DataTypes.STRING,
