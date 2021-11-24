@@ -24,22 +24,22 @@ const axios = require("axios");
 
 const getCountries = async () => {
   const countriesApi = await axios.get("https://restcountries.com/v3/all");
-
+  
   const countries = countriesApi.data.map((c) => ({
     id: c.cca3,
-    nombre: c.name.common ? c.name.common : "vacio",
+    nombre: c.name.common ? c.name.common : "name not found",
     imagen: c.flags[0] ? c.flags[0] : "image not found",
     continente: c.continents.length
       ? c.continents.join(", ")
       : "continent not found",
-    capital: c.capital ? c.capital.join(", ") : "capital not",
-    subregion: c.subregion ? c.subregion : "vacio",
+    capital: c.capital ? c.capital.join(", ") : "capital not found",
+    subregion: c.subregion ? c.subregion : "subregion not found",
     area: c.area ? parseInt(c.area) : 000,
     poblacion: c.population ? parseInt(c.population) : 000,
   }));
 
   countries.forEach(async (e) => {
-    await Country.findOrCreate({ where: e });
+    await Country.create(e);
   });
 };
 

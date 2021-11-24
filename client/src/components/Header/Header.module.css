@@ -1,0 +1,17 @@
+.header {
+  margin-bottom: 20px;
+}
+
+.title {
+  text-align: center;
+}
+
+.operations {
+  display: flex;
+  justify-content: center;
+}
+
+.operations div {
+  /* border: 1px solid #000; */
+  margin: 0 10px;
+}
