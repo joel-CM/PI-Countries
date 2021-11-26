@@ -1,0 +1,14 @@
+.backHome {
+  text-align: center;
+  margin: 20px;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer div {
+  margin: 10px;
+}

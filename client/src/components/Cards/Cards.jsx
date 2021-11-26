@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import s from "./Cards.module.css"
 // component Card
 import Card from "../Card/Card"
-import { connect, useDispatch, useSelector } from "react-redux"
+import { connect, useSelector } from "react-redux"
 // actions
 import { getCountries } from "../../actions/actions"
 
@@ -24,6 +24,7 @@ const Cards = ({ countries, getCountries }) => {
             {
                 state?.map(c => <Card
                     key={c?.id}
+                    id={c?.id}
                     imagen={c?.imagen}
                     nombre={c?.nombre}
                     continente={c?.continente}

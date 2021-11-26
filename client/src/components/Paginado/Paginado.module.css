@@ -1,8 +1,17 @@
 .paginado {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
+  padding: 10px 0;
 }
 .paginado button {
+  border: none;
+  outline: none;
+  background: #330057fd;
+  color: #dda0dd;
   margin: 5px;
+}
+
+.disabled {
+  opacity: 0.5;
+  color: red;
 }

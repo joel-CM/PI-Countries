@@ -1,6 +1,7 @@
 import React from 'react'
 import s from "./Header.module.css"
 import { useDispatch } from "react-redux"
+import { Link } from "react-router-dom"
 // actions
 import { filterByContinent, orderByName } from "../../actions/actions"
 // components
@@ -20,7 +21,7 @@ const Header = () => {
     return (
         <div className={s.header}>
             <div className={s.headeTitle}>
-                <h1 className={s.title}> API Countries - Henry </h1>
+                <h1 className={s.title}> PI Countries - Henry </h1>
             </div>
             <div className={s.back}>
                 <div className={s.backHome}>
@@ -50,6 +51,9 @@ const Header = () => {
                         <option value="population_asc">population - ASC</option>
                         <option value="population_des">populations - DES</option>
                     </select>
+                </div>
+                <div className={s.createLink}>
+                    <Link className={s.link} to="/create">Create Activity</Link>
                 </div>
                 <Search />
             </div>

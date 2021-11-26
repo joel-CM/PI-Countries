@@ -20,7 +20,7 @@ const Paginado = () => {
                 <AiOutlineArrowLeft />
             </button>
             <button
-                disabled={countries.length - 1 > final && true}
+                disabled={countries.length - 1 < final && true}
                 onClick={() => countries.length - 1 > final && dispatch(pagRight())}>
                 <AiOutlineArrowRight />
             </button>

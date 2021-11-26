@@ -4,7 +4,7 @@ const app = Router();
 const { Activity, Country } = require("../db");
 
 app.post("/", async (req, res) => {
-  const { nombre, dificultad, duracion, temporada, idCountry } = req.body;
+  const { nombre, dificultad, duracion, temporada, countriesNames } = req.body;
   const searchActivity = await Activity.findOne({ where: { nombre } });
   if (!searchActivity) {
     const activity = await Activity.create({
@@ -14,20 +14,21 @@ app.post("/", async (req, res) => {
       temporada,
     });
 
-    if (idCountry) {
-      const country = await Country.findOne({
-        where: {
-          id: idCountry,
-        },
-        attributes: ["id"],
-      });
+    if (countriesNames.length) {
+      for (let i = 0; i < countriesNames.length; i++) {
+        const country = await Country.findAll({
+          where: {
+            nombre: countriesNames[i],
+          },
+          attributes: ["nombre"],
+        });
+        activity.addCountries(country[0].nombre);
+      }
 
-      activity.addCountries(country);
+      return res.json({ message: "Created activity!" });
+    } else {
+      return res.json({ message: "activity already exists!" });
     }
-
-    return res.json({ message: "Created activity!" });
-  } else {
-    return res.json({ message: "activity already exists!" });
   }
 });
 

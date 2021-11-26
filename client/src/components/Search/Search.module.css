@@ -1,0 +1,9 @@
+.search input[type="text"] {
+  border: none;
+  outline: none;
+  background: #330057fd;
+  color: #dda0dd;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+}

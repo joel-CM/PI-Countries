@@ -1,24 +1,27 @@
 import React from 'react'
 import s from "./Card.module.css"
+import { Link } from "react-router-dom"
 
-const Card = ({ imagen, nombre, continente, poblacion }) => {
+const Card = ({ imagen, nombre, continente, poblacion, id }) => {
     return (
         <div className={s.card}>
             <div className={s.image}>
-                <img src={imagen} alt={nombre} />
+                <img className={s.img} src={imagen} alt={nombre} />
             </div>
             <div className={s.cardInfo}>
                 <div className={s.cardName}>
-                    <h4>{nombre}</h4>
+                    <Link className={s.link} to={`/detail/${id}`}>
+                        <h4>{nombre}</h4>
+                    </Link>
                 </div>
                 <div className={s.cardContinent}>
-                    <p>{continente}</p>
+                    <p><strong>Continente: </strong>{continente}</p>
                 </div>
                 <div className={s.population}>
-                    <p>{poblacion}</p>
+                    <p><strong>Población: </strong>{poblacion}</p>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 

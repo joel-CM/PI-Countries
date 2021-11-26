@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import s from "./Home.module.css"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 // actions
 import { getCountries } from "../../actions/actions"
 // components
@@ -21,6 +21,7 @@ const Home = () => {
             <Header />
             <Paginado />
             <Cards />
+            <Paginado />
         </div>
     )
 }

@@ -1,8 +1,58 @@
+* {
+  box-sizing: border-box;
+  color: #7cb9e8;
+}
+@keyframes ehover {
+  0% {
+    position: relative;
+    top: 0;
+  }
+  16.6% {
+    top: 7px;
+  }
+  33.2% {
+    top: -7px;
+  }
+  75% {
+    top: 4px;
+  }
+  49.8% {
+    top: -4;
+  }
+  66.4% {
+    top: 3;
+  }
+  83% {
+    top: -3;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.link {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
 .card {
-  border: 2px solid #000;
+  border: 1px solid #dda0dd;
   width: 200px;
+  min-width: 200px;
+  height: 400px;
   max-height: 400px;
   margin: 10px;
+  box-shadow: 4px 4px 3px 1px #452c63;
+  border-radius: 5px;
+  background: #33006f;
+}
+
+.card:hover {
+  animation-name: ehover;
+  animation-timing-function: ease;
+  animation-iteration-count: initial;
+  animation-duration: 0.7s;
 }
 
 .image {
@@ -13,8 +63,16 @@
   align-items: center;
 }
 
-.image img {
+.image .img {
   width: 90%;
   height: 90%;
+  margin: 0;
+  padding: 0;
   object-fit: cover;
+  border-radius: 5px;
+}
+
+.card h4,
+.card p {
+  text-align: center;
 }

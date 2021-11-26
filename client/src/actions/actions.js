@@ -1,5 +1,6 @@
 export const GET_COUNTRIES = "GET_COUNTRIES";
 export const GET_BY_QUERY = "GET_BY_QUERY";
+export const GET_COUNTRIES_NAME = "GET_COUNTRIES_NAME";
 export const PAG_LEFT = "PAG_LEFT";
 export const PAG_RIGHT = "PAG_RIGHT";
 export const FILTER_BY_CONTINENT = "FILTER_BY_CONTINENT";
@@ -59,5 +60,16 @@ export const orderByName = (name) => {
   return {
     type: ORDER_BY_NAME,
     payload: name,
+  };
+};
+
+export const getCountriesName = () => {
+  return async function (dispatch) {
+    const res = await fetch("http://localhost:3001/api/countries_name");
+    const data = await res.json();
+    dispatch({
+      type: GET_COUNTRIES_NAME,
+      payload: data,
+    });
   };
 };

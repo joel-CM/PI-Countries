@@ -5,9 +5,11 @@ import {
   PAG_RIGHT,
   FILTER_BY_CONTINENT,
   ORDER_BY_NAME,
+  GET_COUNTRIES_NAME,
 } from "../actions/actions";
 
 const initialState = {
+  countriesNames: [],
   countriesLoaded: [],
   countries: [],
   pagInicio: 0,
@@ -20,6 +22,13 @@ export const reducer = (state = initialState, action) => {
       ...state,
       countriesLoaded: action.payload,
       countries: [...state.countriesLoaded],
+    };
+  }
+
+  if (action.type === GET_COUNTRIES_NAME) {
+    return {
+      ...state,
+      countriesNames: action.payload,
     };
   }
 

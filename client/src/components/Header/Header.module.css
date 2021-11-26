@@ -9,9 +9,34 @@
 .operations {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .operations div {
   /* border: 1px solid #000; */
   margin: 0 10px;
+}
+
+.filters select,
+.sorts select {
+  background: #330057fd;
+  color: #dda0dd;
+  border: none;
+  outline: none;
+}
+.filters select option,
+.sorts select option {
+  background: #330057fd;
+  color: #dda0dd;
+}
+
+.createLink {
+  padding: 5px;
+  background: #330057fd;
+  border-radius: 5px;
+}
+
+.link {
+  text-decoration: none;
+  color: #dda0dd;
 }
