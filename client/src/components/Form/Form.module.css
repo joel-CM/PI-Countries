@@ -5,10 +5,18 @@
 
 .formContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .formContainer div {
   margin: 10px;
+}
+
+.formContainer input,
+.formContainer select,
+.formContainer select option {
+  color: #000;
+  background: #fff;
 }

@@ -33,6 +33,7 @@ const CardDetail = () => {
                     <p>{state?.subregion}</p>
                     <p>{state?.area}</p>
                     <p>{state?.poblacion}</p>
+                    <p>{state.Actividades?.map(a => a.nombre)}</p>
                 </div>
             </div>
         </div>

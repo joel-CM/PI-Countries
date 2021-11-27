@@ -11,10 +11,10 @@ const Form = () => {
     const countriesNames = useSelector((state) => state.countriesNames)
 
     const [state, setState] = useState({
-        id
+        countriesNames: [],
         nombre: "",
         dificultad: 0,
-        duracion: "",
+        duracion: 0,
         temporada: "",
     });
 
@@ -23,15 +23,26 @@ const Form = () => {
     }, [])
 
     const handleACtivity = (e) => {
-        setState({
-            ...state,
-            [e.target.name]: e.target.value,
-        });
+        setState(() => {
+            if (e.target.name !== "countriesNames") {
+                return {
+                    ...state,
+                    [e.target.name]: e.target.value,
+                }
+            } else {
+                return {
+                    ...state,
+                    [e.target.name]: [...state.countriesNames, e.target.value],
+                }
+            }
+        })
     };
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        alert("se envió")
+        axios.post("http://localhost:3001/api/activity", state).then(res => {
+            alert("actividad creada")
+        })
     }
 
     return (
@@ -61,6 +72,15 @@ const Form = () => {
                 </div>
                 <div className={s.temporada}>
                     <select name="temporada" onChange={handleACtivity}>
+                        <option value="primavera">primavera</option>
+                        <option value="verano">verano</option>
+                        <option value="otoño">otoño</option>
+                        <option value="invierno">invierno</option>
+                    </select>
+                </div>
+                <div className={s.idCountries}>
+                    <select name="countriesNames" onChange={handleACtivity}>
+                        <option value="none">NONE</option>
                         {
                             countriesNames?.map((c) => (
                                 <option value={c}>{c}</option>

@@ -65,7 +65,7 @@ export const orderByName = (name) => {
 
 export const getCountriesName = () => {
   return async function (dispatch) {
-    const res = await fetch("http://localhost:3001/api/countries_name");
+    const res = await fetch("http://localhost:3001/api/countries_names");
     const data = await res.json();
     dispatch({
       type: GET_COUNTRIES_NAME,
