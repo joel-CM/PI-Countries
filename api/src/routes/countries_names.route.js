@@ -1,7 +1,6 @@
 const { Router } = require("express");
 const app = Router();
 const { Country } = require("../db");
-const { Op } = require("sequelize");
 
 app.get("/", async (req, res) => {
   const countriesDB = await Country.findAll({

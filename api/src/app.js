@@ -3,7 +3,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const routes = require("./routes/index.js");
-const countriesNameRoute = require("./routes/countries_names.route.js");
+// const countriesNameRoute = require("./routes/countries_names.route.js");
 
 require("./db.js");
 
@@ -27,7 +27,6 @@ server.use((req, res, next) => {
 });
 
 server.use("/", routes);
-server.use("/api/countries_name", countriesNameRoute);
 
 // Error catching endware.
 server.use((err, req, res, next) => {

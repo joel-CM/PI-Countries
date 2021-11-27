@@ -26,6 +26,7 @@ app.get("/", async (req, res) => {
       },
       attributes: ["id", "imagen", "nombre", "continente", "poblacion"],
     });
+
     if (countryDB) return res.json({ from: "DB", result: countryDB });
     else
       return res.json({
@@ -48,25 +49,26 @@ app.get("/:id", async (req, res) => {
   });
 
   // formateo - actividades
-  const country = {
-    id: countryDB["id"],
-    nombre: countryDB["nombre"],
-    imagen: countryDB["imagen"],
-    continente: countryDB["continente"],
-    capital: countryDB["capital"],
-    subregion: countryDB["subregion"],
-    area: countryDB["area"],
-    poblacion: countryDB["poblacion"],
-    Actividades: countryDB["Activities"].map((a) => ({
-      nombre: a.nombre,
-      dificultad: a.dificultad,
-      duracion: a.duracion,
-      temporada: a.temporada,
-    })),
-  };
+  if (countryDB) {
+    const country = {
+      id: countryDB["id"],
+      nombre: countryDB["nombre"],
+      imagen: countryDB["imagen"],
+      continente: countryDB["continente"],
+      capital: countryDB["capital"],
+      subregion: countryDB["subregion"],
+      area: countryDB["area"],
+      poblacion: countryDB["poblacion"],
+      Actividades: countryDB["Activities"].map((a) => ({
+        nombre: a.nombre,
+        dificultad: a.dificultad,
+        duracion: a.duracion,
+        temporada: a.temporada,
+      })),
+    };
 
-  if (country) return res.json(country);
-  else return res.json({ message: "country not found!" });
+    if (country) return res.json(country);
+  } else return res.json({ message: "country not found!" });
 });
 
 module.exports = app;
