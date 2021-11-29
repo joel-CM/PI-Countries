@@ -1,0 +1,20 @@
+.btnBack {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.detailContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cardImage img {
+  width: 500px;
+  border-radius: 20px;
+}
+
+.cardInfo {
+  border: 2px solid #000;
+  margin: 10px;
+}

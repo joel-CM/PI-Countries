@@ -21,19 +21,23 @@ const CardDetail = () => {
             <div className={s.btnBack}>
                 <Link to="/home">BACK</Link>
             </div>
-            <div className={s.datailContainer}>
+            <div className={s.detailContainer}>
                 <div className={s.cardImage}>
                     <img src={state?.imagen} alt={state.nombre} />
                 </div>
                 <div className={s.cardInfo}>
-                    <h4 className={s.title}>{state?.nombre}</h4>
-                    <p>{state?.continente}</p>
-                    <p>{state?.id}</p>
-                    <p>{state?.capital}</p>
-                    <p>{state?.subregion}</p>
-                    <p>{state?.area}</p>
-                    <p>{state?.poblacion}</p>
-                    <p>{state.Actividades?.map(a => a.nombre)}</p>
+                    <h4 className={s.title}><b>Nombre:</b> {state?.nombre}</h4>
+                    <p><strong>Continente:</strong> {state?.continente}</p>
+                    <p><strong>Código: </strong>{state?.id}</p>
+                    <p><strong>Capital:</strong> {state?.capital}</p>
+                    <p><strong>Subregion:</strong> {state?.subregion}</p>
+                    <p><strong>Área:</strong> {state?.area}</p>
+                    <p><strong>Población:</strong> {state?.poblacion}</p>
+                </div>
+            </div>
+            <div className={s.detailActivity}>
+                <div className={s.activityContainer}>
+                    
                 </div>
             </div>
         </div>
