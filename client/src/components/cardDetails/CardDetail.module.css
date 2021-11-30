@@ -5,16 +5,55 @@
 
 .detailContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
-.cardImage img {
-  width: 500px;
-  border-radius: 20px;
+.cardInfo {
+  width: 50vw;
+  height: 50vh;
+  margin: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-.cardInfo {
-  border: 2px solid #000;
-  margin: 10px;
+.cardInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.cardInfo h4,
+.cardInfo p {
+  z-index: 999;
+  margin: 5px;
+}
+
+.cardInfo img {
+  position: absolute;
+  width: 100%;
+  z-index: -999;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -888;
+}
+
+/* ------------------ ACtividades --------------------------------- */
+
+.activityContainer {
+  display: flex;
+  justify-content: center;
 }

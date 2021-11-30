@@ -24,7 +24,7 @@ const axios = require("axios");
 
 const getCountries = async () => {
   const countriesApi = await axios.get("https://restcountries.com/v3/all");
-  
+
   const countries = countriesApi.data.map((c) => ({
     id: c.cca3,
     nombre: c.name.common ? c.name.common : "name not found",
