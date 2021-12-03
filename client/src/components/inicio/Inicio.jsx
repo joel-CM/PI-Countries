@@ -1,17 +1,17 @@
-import React from 'react'
-// import { connect } from "react-redux"
-// actions
-// import { getCountries } from "../../actions/actions"
-// react-router component
-import { Link } from "react-router-dom"
+import React from "react";
+import s from "./Inicio.module.css";
+import { NavLink } from "react-router-dom";
 
 const Inicio = ({ countries, getCountries }) => {
-    return (
-        <div>
-            <h3>inicio</h3>
-            <Link to="/home">Home</Link>
-        </div>
-    )
-}
+  return (
+    <div className={s.container}>
+      <button className={s.btn}>
+        <NavLink className={s.link} to="/home">
+          HOME!
+        </NavLink>
+      </button>
+    </div>
+  );
+};
 
-export default Inicio
+export default Inicio;

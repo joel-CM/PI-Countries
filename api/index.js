@@ -38,8 +38,8 @@ const getCountries = async () => {
     poblacion: c.population ? parseInt(c.population) : 000,
   }));
 
-  countries.forEach(async (e) => {
-    await Country.create(e);
+  countries.forEach(async (c) => {
+    await Country.create(c);
   });
 };
 

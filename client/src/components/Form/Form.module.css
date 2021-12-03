@@ -2,21 +2,54 @@
   text-align: center;
   margin: 20px;
 }
+.link {
+  text-decoration: none;
+  border: 2px solid #dda0dd;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.link:hover {
+  background: #6200a8fd;
+}
 
 .formContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 2px solid #dda0dd;
+  width: 50vw;
+  margin: auto;
 }
 
 .formContainer div {
   margin: 10px;
 }
 
+.formContainer label {
+  display: block;
+  padding: 5px;
+}
+
 .formContainer input,
 .formContainer select,
 .formContainer select option {
-  color: #000;
-  background: #fff;
+  color: #dda0dd;
+  background: #330057fd;
+  border: 2px solid #dda0dd;
+  width: 200px;
+  padding: 5px 0;
+}
+
+.formContainer input::placeholder {
+  color: #dda0dd;
+  padding: 5px;
+}
+
+.formContainer input[type="submit"] {
+  cursor: pointer;
+  border-radius: 5px;
+}
+.formContainer input[type="submit"]:hover {
+  background: #6200a8fd;
 }

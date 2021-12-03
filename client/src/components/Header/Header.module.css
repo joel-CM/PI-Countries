@@ -4,6 +4,7 @@
 
 .title {
   text-align: center;
+  padding: 20px 0;
 }
 
 .operations {
@@ -13,11 +14,11 @@
 }
 
 .operations div {
-  /* border: 1px solid #000; */
   margin: 0 10px;
 }
 
 .filters select,
+.filterActivity select,
 .sorts select {
   background: #330057fd;
   color: #dda0dd;
@@ -25,6 +26,7 @@
   outline: none;
 }
 .filters select option,
+.filterActivity select option,
 .sorts select option {
   background: #330057fd;
   color: #dda0dd;
@@ -39,4 +41,13 @@
 .link {
   text-decoration: none;
   color: #dda0dd;
+}
+
+.linkBack {
+  text-decoration: none;
+  color: #dda0dd;
+  margin: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 2px solid #dda0dd;
 }

@@ -1,9 +1,11 @@
 export const GET_COUNTRIES = "GET_COUNTRIES";
 export const GET_BY_QUERY = "GET_BY_QUERY";
 export const GET_COUNTRIES_NAME = "GET_COUNTRIES_NAME";
+export const GET_ACTIVITIES = "GET_ACTIVITIES";
 export const PAG_LEFT = "PAG_LEFT";
 export const PAG_RIGHT = "PAG_RIGHT";
 export const FILTER_BY_CONTINENT = "FILTER_BY_CONTINENT";
+export const FILTER_BY_ACTIVITY = "FILTER_BY_ACTIVITY";
 export const ORDER_BY_NAME = "ORDER_BY_NAME";
 
 export const getCountries = () => {
@@ -41,6 +43,19 @@ export const getByQuery = (country) => {
   };
 };
 
+export const getActivities = () => {
+  return function (dispatch) {
+    fetch("http://localhost:3001/api/activity")
+      .then((res) => res.json())
+      .then((arrayActivities) => {
+        dispatch({
+          type: GET_ACTIVITIES,
+          payload: arrayActivities,
+        });
+      });
+  };
+};
+
 export const pagLeft = () => ({
   type: PAG_LEFT,
 });
@@ -53,6 +68,13 @@ export const filterByContinent = (continent) => {
   return {
     type: FILTER_BY_CONTINENT,
     payload: continent,
+  };
+};
+
+export const filterByActivity = (activity) => {
+  return {
+    type: FILTER_BY_ACTIVITY,
+    payload: activity,
   };
 };
 

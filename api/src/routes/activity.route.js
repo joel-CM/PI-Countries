@@ -26,9 +26,16 @@ app.post("/", async (req, res) => {
       activity.addCountries(country[0].id);
     }
 
-    return res.json({ message: "Created activity!" });
+    return res.json({ message: "activity created" });
+  } else {
+    return res.json({ message: "activity already exists" });
   }
-  return res.json({ message: "activity already exists!" });
+});
+
+// devuelvo las actividades
+app.get("/", async (req, res) => {
+  const activities = await Activity.findAll();
+  res.json(activities);
 });
 
 module.exports = app;

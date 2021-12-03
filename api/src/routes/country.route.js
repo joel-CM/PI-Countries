@@ -12,6 +12,9 @@ app.get("/", async (req, res) => {
     // si query no existe
     const countriesDB = await Country.findAll({
       attributes: ["id", "imagen", "nombre", "continente", "poblacion"],
+      include: {
+        model: Activity,
+      },
     });
 
     return res.json({ from: "DB", results: countriesDB });
@@ -25,9 +28,12 @@ app.get("/", async (req, res) => {
         },
       },
       attributes: ["id", "imagen", "nombre", "continente", "poblacion"],
+      include: {
+        model: Activity,
+      },
     });
 
-    if (countryDB) return res.json({ from: "DB", result: countryDB });
+    if (countryDB.length) return res.json({ from: "DB", result: countryDB });
     else
       return res.json({
         from: "DB",

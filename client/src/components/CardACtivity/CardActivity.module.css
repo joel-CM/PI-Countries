@@ -1,6 +1,15 @@
 .container {
+  width: 200px;
+  min-width: 200px;
+  height: 220px;
+  min-height: 220px;
   border-radius: 10px;
   border: 1px solid #dda0dd;
   padding: 5px 10px;
-  margin: 5px;
+  margin: 10px;
+}
+
+.container p,
+.container h4 {
+  margin: 20px;
 }

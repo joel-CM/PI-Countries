@@ -7,7 +7,7 @@ app.get("/", async (req, res) => {
     attributes: ["nombre"],
   });
 
-  const countries = countriesDB.map((e) => e.nombre);
+  const countries = countriesDB.map((c) => c.nombre);
   const result = countries.sort((a, b) => (a > b ? 1 : -1));
   return res.json(result);
 });

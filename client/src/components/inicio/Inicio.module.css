@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url("../../img/background-inicio.png");
+  background-size: 30%;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  margin-bottom: 50px;
+  padding: 5px 10px;
+  border: 1px solid rgba(69, 44, 99, 0.8);
+  border-radius: 5px;
+  background: transparent;
+}
+
+.btn:hover {
+  background: rgb(43, 27, 61);
+}
+
+.link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}

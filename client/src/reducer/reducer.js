@@ -4,14 +4,17 @@ import {
   PAG_LEFT,
   PAG_RIGHT,
   FILTER_BY_CONTINENT,
+  FILTER_BY_ACTIVITY,
   ORDER_BY_NAME,
   GET_COUNTRIES_NAME,
+  GET_ACTIVITIES,
 } from "../actions/actions";
 
 const initialState = {
   countriesNames: [],
   countriesLoaded: [],
   countries: [],
+  activities: [],
   pagInicio: 0,
   pagFinal: 10,
 };
@@ -42,6 +45,13 @@ export const reducer = (state = initialState, action) => {
     };
   }
 
+  if (action.type === GET_ACTIVITIES) {
+    return {
+      ...state,
+      activities: action.payload,
+    };
+  }
+
   if (action.type === PAG_LEFT) {
     return {
       ...state,
@@ -65,6 +75,29 @@ export const reducer = (state = initialState, action) => {
         countries: state.countriesLoaded.filter(
           (c) => c.continente === action.payload
         ),
+        pagInicio: 0,
+        pagFinal: 10,
+      };
+    } else {
+      return {
+        ...state,
+        countries: [...state.countriesLoaded],
+        pagInicio: 0,
+        pagFinal: 10,
+      };
+    }
+  }
+
+  if (action.type === FILTER_BY_ACTIVITY) {
+    if (action.payload !== "none") {
+      return {
+        ...state,
+        countries: state.countriesLoaded.filter((c) => {
+          const res = c.Activities.find(
+            (a) => a.nombre === action.payload && a
+          );
+          if (res) return res;
+        }),
         pagInicio: 0,
         pagFinal: 10,
       };

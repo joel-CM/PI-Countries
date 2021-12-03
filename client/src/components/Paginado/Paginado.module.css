@@ -9,9 +9,5 @@
   background: #330057fd;
   color: #dda0dd;
   margin: 5px;
-}
-
-.disabled {
-  opacity: 0.5;
-  color: red;
+  font-size: 1rem;
 }

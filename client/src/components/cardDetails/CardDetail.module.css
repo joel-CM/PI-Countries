@@ -1,6 +1,18 @@
 .btnBack {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin: 20px 0;
+}
+
+.btnBack button {
+  background: transparent;
+  border: 2px solid #dda0dd;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.link {
+  text-decoration: none;
 }
 
 .detailContainer {
@@ -53,7 +65,21 @@
 
 /* ------------------ ACtividades --------------------------------- */
 
+.detailActivity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.detailActivity strong {
+  margin-top: 20px;
+}
+.detailActivity h3 {
+  margin: 10px;
+}
+
 .activityContainer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
