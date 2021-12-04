@@ -122,7 +122,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         countries: [
-          ...state.countries.sort((a, b) => (a.nombre > b.nombre ? 1 : -1)),
+          ...state.countries.sort((a, b) => a.nombre.localeCompare(b.nombre)),
         ],
       };
     }
@@ -130,7 +130,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         countries: [
-          ...state.countries.sort((a, b) => (a.nombre > b.nombre ? -1 : 1)),
+          ...state.countries.sort((a, b) => b.nombre.localeCompare(a.nombre)),
         ],
       };
     }

@@ -9,8 +9,8 @@ export const FILTER_BY_ACTIVITY = "FILTER_BY_ACTIVITY";
 export const ORDER_BY_NAME = "ORDER_BY_NAME";
 
 export const getCountries = () => {
-  return async function (dispatch) {
-    return fetch("http://localhost:3001/api/countries")
+  return function (dispatch) {
+    fetch("http://localhost:3001/api/countries")
       .then((res) => res.json())
       .then((data) => {
         dispatch({
@@ -27,7 +27,9 @@ export const getByQuery = (country) => {
       const res = await fetch(
         `http://localhost:3001/api/countries?name=${country}`
       );
+
       const data = await res.json();
+
       dispatch({
         type: GET_BY_QUERY,
         payload: data.result,

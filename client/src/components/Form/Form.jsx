@@ -49,7 +49,7 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post("http://localhost:3001/api/activity", state).then((res) => {
-      alert("actividad creada");
+      alert("activity created");
     });
   };
 
