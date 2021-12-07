@@ -46,8 +46,11 @@ const Header = () => {
           </Link>
         </div>
       </div>
+
+      {/* ------------ operaciones --------------------------  */}
+
       <div className={s.operations}>
-        {/* ---------- select filtro por actividades ---------- */}
+        {/* ---------- select filtro por actividades ---w------- */}
 
         <div className={s.filterActivity}>
           <span>Activities: </span>

@@ -20,6 +20,7 @@ const initialState = {
 };
 
 export const reducer = (state = initialState, action) => {
+  // traigo todos los paises-----------------------------------------
   if (action.type === GET_COUNTRIES) {
     return {
       ...state,
@@ -28,6 +29,7 @@ export const reducer = (state = initialState, action) => {
     };
   }
 
+  // nombre de todos los paises ------------------------------------
   if (action.type === GET_COUNTRIES_NAME) {
     return {
       ...state,
@@ -35,6 +37,7 @@ export const reducer = (state = initialState, action) => {
     };
   }
 
+  // traigo paises por nombre -----------------------------------------------
   if (action.type === GET_BY_QUERY) {
     console.log(action.payload);
     return {
@@ -45,6 +48,7 @@ export const reducer = (state = initialState, action) => {
     };
   }
 
+  // traigo todas las actividades ---------------------------------------
   if (action.type === GET_ACTIVITIES) {
     return {
       ...state,
@@ -52,6 +56,7 @@ export const reducer = (state = initialState, action) => {
     };
   }
 
+  // paginado izquierda ---------------------------------------------------------
   if (action.type === PAG_LEFT) {
     return {
       ...state,
@@ -60,6 +65,7 @@ export const reducer = (state = initialState, action) => {
     };
   }
 
+  // paginado derecha ----------------------------------------------------------
   if (action.type === PAG_RIGHT) {
     return {
       ...state,
@@ -68,6 +74,7 @@ export const reducer = (state = initialState, action) => {
     };
   }
 
+  // filtro por continente ----------------------------------------------------
   if (action.type === FILTER_BY_CONTINENT) {
     if (action.payload !== "none") {
       return {
@@ -88,6 +95,7 @@ export const reducer = (state = initialState, action) => {
     }
   }
 
+  // filtro por actividad --------------------------------------------------------------
   if (action.type === FILTER_BY_ACTIVITY) {
     if (action.payload !== "none") {
       return {
@@ -111,6 +119,7 @@ export const reducer = (state = initialState, action) => {
     }
   }
 
+  // orden por nombre ---------------------------------------------------------
   if (action.type === ORDER_BY_NAME) {
     if (action.payload === "none") {
       return {
